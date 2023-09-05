@@ -5,15 +5,14 @@ import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com
 import { getStorage , ref ,uploadBytes, uploadBytesResumable, getDownloadURL} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCx4MrJq9hfW165vvCK4wyHjywSJcR1zjc",
-  authDomain: "pds-uav-e76bb.firebaseapp.com",
-  projectId: "pds-uav-e76bb",
-  storageBucket: "pds-uav-e76bb.appspot.com",
-  messagingSenderId: "482759149854",
-  appId: "1:482759149854:web:0797f3a2ffecc6106ee10f",
-  measurementId: "G-24LDSH8HWB"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: ""
 };
 
 
