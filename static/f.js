@@ -4,13 +4,13 @@ import { getFirestore , collection, addDoc, getDocs,setDoc,getDoc, doc, query, w
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCx4MrJq9hfW165vvCK4wyHjywSJcR1zjc",
-  authDomain: "pds-uav-e76bb.firebaseapp.com",
-  projectId: "pds-uav-e76bb",
-  storageBucket: "pds-uav-e76bb.appspot.com",
-  messagingSenderId: "482759149854",
-  appId: "1:482759149854:web:0797f3a2ffecc6106ee10f",
-  measurementId: "G-24LDSH8HWB"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: ""
 };
 
 // Initialize Firebase
