@@ -59,7 +59,7 @@ def predict_img():
                 frame = cv2.imencode(".jpeg", cv2.UMat(img))[1].tobytes()
                 image = Image.open(io.BytesIO(frame))
                 # Perform the detection 
-                yolo = YOLO("../yolov8_env/yolo8_Ffask_app/best.pt")
+                yolo = YOLO("../best.pt")
                 detections = yolo.predict(image, save=True)
                 
                 for r in detections:
@@ -73,7 +73,7 @@ def predict_img():
             
         
         
-    folder_path = '../runs/detect'
+    folder_path = '..detect'
     subfolders = [f for f in os.listdir (folder_path) if os.path.isdir(os.path.join(folder_path, f))]
     latest_subfolder = max(subfolders, key=lambda x: os.path.getctime(os.path.join(folder_path, x)))
     image_path = folder_path+'/'+latest_subfolder+'/'+f.filename
@@ -84,7 +84,7 @@ def predict_img():
 #The display function is used to serve the image  from the folder_path directory.
 @app.route('/<path:filename>')
 def display (filename):
-    folder_path = 'C:/Users/salaz/Desktop/yolov8_env/runs/detect'
+    folder_path = 'C:/detect'
     subfolders = [f for f in os.listdir(folder_path) if os.path.isdir(os.path.join(folder_path, f))]
     print("subfolders",subfolders)
     latest_subfolder = max(subfolders, key=lambda x: os.path.getctime(os.path.join(folder_path, x)))
