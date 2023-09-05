@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.108.0">
+    <title>{% block title %} {% endblock %} Add Pothole</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+   
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+
+          font-size: 15.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      /* Center the image */
+
+
+form{
+    text-align: left;
+}
+
+
+#errorMessage{
+    color:red;
+}
+p{
+    text-align: left;
+}
+#info{
+    display: none;
+    width:70%;
+    height:auto;
+    margin:auto;
+    
+}
+
+#info p{
+    text-align: left;
+}
+#preview{
+        height: 450px;
+        width: 450px;
+        
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="..\static\checkout.css" rel="stylesheet">
+
+  </head>
+
+  <header>
+    <hr class="my-4">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <img class="navbar-brand" src="..\static\image\logo.jpg" alt="" width="70" height="60">
+
+
+        <a class="navbar-brand" href="{{ url_for('home') }}">PDS-UAV</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link"  href="{{ url_for('home') }}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{{ url_for('upload') }}">Add new pothole</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('welcome') }}">Sign out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <body class="bg-light">
+  
+<div class="container">
+  <main>
+    <div class="py-2 text-center">
+      <img class="d-block mx-auto mb-4" src="..\static\image\logo.jpg" alt="" width="200" height="200">
+      <h2>Add New Pothole</h2>
+      <p class="lead">Please fill the required information to upload the new pothole:</p>
+    </div>
+       <div class="col-md-12 col-lg-12">
+        <h4 class="mb-3">Pothole location</h4>
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="Latitude" class="form-label">Latitude</label>
+              <input type="text" class="form-control" id="Latitude" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Latitude is required.
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <label for="Longitude" class="form-label">Longitude</label>
+              <input type="text" class="form-control" id="Longitude" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                longitude is required.
+              </div>
+            </div>
+            <div class="col-12">
+              <label for="District" class="form-label">District</label>
+              <input type="text" class="form-control" id="District" placeholder="e.g: Alhamraa" required>
+              <div class="invalid-feedback">
+                Please enter pothole's district.
+              </div>
+            </div> 
+          </form>
+        <hr class="my-4">
+        <label  class="form-label">Upload Pothole image</label>
+        <div class="col-md-12">
+            <form class="form-signin col-lg-3" method="post" enctype="multipart/form-data" name="form1">
+                <h4 id="errorMessage"></h4> 
+                <input type="file" name="file" id="imgInp">
+                <p></p>
+                <img id="preview" >
+                <div id="info">
+                    <i>File Info:</i>
+                    <p><strong>Image Name:</strong> <span class="img-name"></span></p>
+                    <p><strong>Image Type:</strong><span class="img-type"></span></p>
+                    <p><strong>Image Size:</strong><span class="img-size"></span></p>    
+                </div>
+                <button class=" btn btn-dark btn-sm" id="retrieve" type="submit">predict</button>
+               
+            </form>
+        </div>
+        <div class="row g-3">      
+          <div class="col-sm-6">
+            <button class="w-100 btn btn-primary btn-lg" id="submit" type="submit">Upload</button>
+          </div>
+          <div class="col-sm-6">
+            <button class="w-100 btn btn-danger btn-lg" id="cancel" type="submit">Cancel</button>
+          </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2022–2023 Company Name</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+
+    <!-- <script src="../assets/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+      <script  src="..\static\checkout.js"></script>
+
+      <script type="module" src="../static/function_ubload.js"></script>
+  </body>
+</html>

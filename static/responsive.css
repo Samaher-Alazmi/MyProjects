@@ -1,0 +1,38 @@
+/* Responsive CSS Here */
+
+   
+    @media screen and (max-width: 320px) {
+    .recent-Articles {
+        font-size: 12px;
+    }
+    .view {
+        width: 50px;
+        font-size: 8px;
+        height: 27px;
+    }
+    .report-header {
+        height: 60px;
+        padding: 10px 5px 5px 5px;
+    }
+    .t-op {
+        font-size: 12px;
+    }
+    .t-op-nextlvl {
+        font-size: 10px;
+    }
+    .report-topic-heading,
+    .item1,
+    .items {
+        width: 300px;
+    }
+    .report-body {
+        padding: 10px;
+    }
+    .label-tag {
+        width: 70px;
+    }
+    .searchbtn {
+        width: 40px;
+    }
+    }
+    
