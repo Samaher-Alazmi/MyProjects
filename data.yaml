@@ -1,7 +1,7 @@
 
-train:  C:/Users/salaz/Desktop/yolov8_env/yolo8_Ffask_app/dataset/ConstructionSiteSafety_dataset/images
-# C:\Users\salaz\Desktop\yolov8_env\yolo8_Ffask_app\dataset\ConstructionSiteSafety_dataset\images\train
-val: C:/Users/salaz/Desktop/yolov8_env/yolo8_Ffask_app/dataset/ConstructionSiteSafety_dataset/images
+train: images
+
+val: /images
 
 
 # Classes
